@@ -1,9 +1,47 @@
 /* add css module styles here (optional) */
+.clfRoot {
+  width: 95%;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(241, 241, 241);
+  border-radius: 40px;
+  padding: 5px;
+}
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
+.clfNumber {
+  display: flex;
+  background-color: #fff;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.clfImg {
+  min-width: 10px
+}
+
+
+.clfFlex {
+  display: flex;
+}
+
+.clfRight10 {
+  margin-right: 10px;
+}
+
+.clfCursorPointer {
+  cursor: pointer;
+}
+
+.clfNoBorder {
+  border: none !important;
+}
+
+.clfInput {
+  width: 70% !important;
+}
+
+.clfInput input {
+  font-size: 16px;
+  font-weight: bold;
 }

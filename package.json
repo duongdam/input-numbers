@@ -1,7 +1,7 @@
 {
   "name": "input-numbers",
   "version": "1.0.0",
-  "description": "ClassFunc input component use easy!",
+  "description": "ClassFunc library input number component use easy!",
   "author": "duongdam",
   "license": "MIT",
   "repository": "duongdam/input-numbers",
@@ -27,8 +27,8 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
@@ -41,13 +41,17 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-scripts": "^3.4.1"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "antd": "^4.12.3"
+  }
 }

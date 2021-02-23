@@ -12,17 +12,50 @@ npm install --save input-numbers
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
+```js
+import React from "react";
+import { ReactComponent as NumCalendar } from "./numMonitor.svg";
+import { ReactComponent as FontIcon } from "./font.svg";
+import { ReactComponent as IdentityImage } from "./hubman.svg";
 
-import MyComponent from 'input-numbers'
-import 'input-numbers/dist/index.css'
+import { CLFInputNumber } from "input-numbers";
+import "input-numbers/dist/index.css";
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+const App = () => {
+  const [value, setValue] = React.useState(1)
+
+  return (
+    <>
+      For Example:
+      <CLFInputNumber
+        imgComponent={<NumCalendar/>}
+        min={1}
+        max={9999}
+        value={value}
+        callBack={(e) => {
+          setValue(e)
+        }}
+        // autoFocus={true}
+      />
+
+      <CLFInputNumber
+        imgComponent={<FontIcon/>}
+        value={3}
+        step={1.5}
+      />
+
+      <CLFInputNumber
+        imgComponent={<IdentityImage/>}
+        value={7}
+        step={2}
+      />
+
+    </>
+  );
+};
+
+export default App;
+
 ```
 
 ## License

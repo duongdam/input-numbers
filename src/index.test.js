@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { CLFInputNumber } from ".";
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
-})
+describe("CLFInputNumber", () => {
+  it("is truthy", () => {
+    expect(CLFInputNumber).toBeTruthy();
+  });
+});
