@@ -4,10 +4,14 @@
 
 [![NPM](https://img.shields.io/npm/v/input-numbers.svg)](https://www.npmjs.com/package/input-numbers) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+Link demo : https://duongdam.github.io/input-numbers/
+
 ## Install
 
 ```bash
 npm install --save input-numbers
+
+yarn add input-numbers
 ```
 
 ## Usage
