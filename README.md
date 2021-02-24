@@ -6,6 +6,8 @@
 
 Link demo : https://duongdam.github.io/input-numbers/
 
+![plot](./inputnumber.png)
+
 ## Install
 
 ```bash
