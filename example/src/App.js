@@ -10,8 +10,10 @@ const App = () => {
   const [value, setValue] = React.useState(1);
 
   return (
-    <>
+    <div style={{ textAlign: "center" }}>
       For Example:
+      <br />
+      Step 1
       <CLFInputNumber
         imgComponent={<NumCalendar />}
         min={1}
@@ -29,6 +31,7 @@ const App = () => {
         // autoFocus={true}
       />
 
+      Step 1.5
       <CLFInputNumber
         imgComponent={<FontIcon />}
         value={3}
@@ -36,14 +39,15 @@ const App = () => {
         color={"blue"}
       />
 
+      Step 2
       <CLFInputNumber
         imgComponent={<IdentityImage />}
         value={7}
         step={2}
       />
 
-    </>
+    </div>
   );
-};
+}
 
 export default App;

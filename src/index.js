@@ -30,7 +30,7 @@ export const CLFInputNumber = ({
     let oldInputValue = inputValue;
     if (action === "add") {
       if (inputValue + step > max)
-        return setInputValue(value);
+        return setInputValue(oldInputValue);
 
       oldInputValue = inputValue + step;
       setInputValue(oldInputValue);
@@ -38,7 +38,7 @@ export const CLFInputNumber = ({
 
     if (action === "remove") {
       if (inputValue - step < min)
-        return setInputValue(value);
+        return setInputValue(oldInputValue);
 
       oldInputValue = inputValue - step;
       setInputValue(oldInputValue);
