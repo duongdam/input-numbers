@@ -1,9 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { InputNumber } from "antd";
 import "antd/dist/antd.css";
-import styles from "./styles.module.css";
 import { ReactComponent as Reduce } from "./giam.svg";
 import { ReactComponent as Increase } from "./tang.svg";
+import styled from "styled-components";
+
+const DivInputCustom = styled.div`
+  width: 95%;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(241, 241, 241);
+  border-radius: 40px;
+  padding: 5px;
+  display: flex;
+  max-width: ${props => props.otherprops.maxWidth};
+  margin: ${props => props.otherprops.marginButton};
+`;
+
+const DivNumberCustom = styled.div`
+  display: flex;
+  background-color: #fff;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  width: ${props => props.width};
+  height: ${props => props.height};
+`;
+
+const ReduceCustom = styled(Reduce)`
+  cursor: pointer;
+  min-width: 10px
+`;
+
+const IncreaseCustom = styled(Increase)`
+  cursor: pointer;
+  min-width: 10px
+`;
+
+const InputNumberCustom = styled(InputNumber)`
+  width: 70%;
+  border: none;
+  color: ${props => props.color};
+
+  & input {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &.ant-input-number-focused {
+    border-radius: 15px 0 0 15px;
+  }
+`;
 
 export const CLFInputNumber = ({
                                  imgComponent = null,
@@ -12,9 +59,9 @@ export const CLFInputNumber = ({
                                  max = 36,
                                  callBack = null,
                                  color = "red",
-                                 maxWidth = 250,
+                                 maxWidth = "250px",
                                  width = "100%",
-                                 height = 35,
+                                 height = "35px",
                                  marginIMG = "0px 10px",
                                  marginButton = "10px auto",
                                  step = 1,
@@ -54,9 +101,22 @@ export const CLFInputNumber = ({
     }
   };
 
+  const onChange = (inputValue) => {
+    if (!Number(inputValue))
+      return setInputValue(value);
+    setInputValue(inputValue);
+  };
+
+  const onStepChange = (value, info) => {
+    if (info.type === "up") {
+      onBlur("add");
+    } else {
+      onBlur("remove");
+    }
+  };
+
   return (
-    <div className={`${styles.clfRoot} ${styles.clfFlex}`}
-         style={{ maxWidth: `${maxWidth}px`, margin: marginButton }}>
+    <DivInputCustom otherprops={{ maxWidth, marginButton }}>
       {
         imgComponent ?
           {
@@ -65,52 +125,36 @@ export const CLFInputNumber = ({
               ...imgComponent.props,
               style: {
                 ...imgComponent.props.style,
-                maxWidth: `${0.7 * height}px`,
-                maxHeight: `${0.7 * height}px`,
+                maxWidth: `${0.7 * Number(height.split("px")[0])}`,
+                maxHeight: `${0.7 * Number(height.split("px")[0])}`,
                 margin: marginIMG
               }
             }
           } :
           null
       }
-      <div
-        className={styles.clfNumber}
-        style={{ width, height: `${height}px` }}
-      >
-        <Reduce
-          className={`${styles.clfCursorPointer} ${styles.clfImg}`}
+      <DivNumberCustom width={width} height={height}>
+        <ReduceCustom
           onClick={() => onBlur("remove")}
           alt="Reduce"
         />
-        <InputNumber
+        <InputNumberCustom
           min={min}
           max={max}
           autoFocus={autoFocus}
           value={inputValue}
           step={step}
-          onChange={inputValue => {
-            if (!Number(inputValue))
-              return setInputValue(value);
-            setInputValue(inputValue);
-          }}
-          onStep={(value, info) => {
-            if (info.type === "up") {
-              onBlur("add");
-            } else {
-              onBlur("remove");
-            }
-          }}
+          onChange={inputValue => onChange(inputValue)}
+          onStep={(value, info) => onStepChange(value, info)}
           onBlur={() => onBlur("auto")}
           onPressEnter={() => onBlur("auto")}
-          className={`${styles.clfNoBorder} ${styles.clfInput}`}
-          style={{ color }}
+          color={color}
         />
-        <Increase
-          className={`${styles.clfCursorPointer} ${styles.clfImg}`}
+        <IncreaseCustom
           onClick={() => onBlur("add")}
           alt="Increase"
         />
-      </div>
-    </div>
+      </DivNumberCustom>
+    </DivInputCustom>
   );
 };

@@ -4,7 +4,6 @@ import { ReactComponent as FontIcon } from "./font.svg";
 import { ReactComponent as IdentityImage } from "./hubman.svg";
 
 import { CLFInputNumber } from "input-numbers";
-import "input-numbers/dist/index.css";
 
 const App = () => {
   const [value, setValue] = React.useState(1);
@@ -23,9 +22,9 @@ const App = () => {
           setValue(e);
         }}
         color={"red"}
-        maxWidth={250}
+        maxWidth={"250px"}
         width={"100%"}
-        height={35}
+        height={"35px"}
         marginIMG={"0px 10px"}
         marginButton={"10px auto"}
         // autoFocus={true}
@@ -42,6 +41,12 @@ const App = () => {
       Step 2
       <CLFInputNumber
         imgComponent={<IdentityImage />}
+        value={7}
+        step={2}
+      />
+
+      Step 2 with no img
+      <CLFInputNumber
         value={7}
         step={2}
       />
