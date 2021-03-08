@@ -52,6 +52,25 @@ const InputNumberCustom = styled(InputNumber)`
   }
 `;
 
+/**
+ *
+ * @param imgComponent
+ * @param value
+ * @param min
+ * @param max
+ * @param callBack
+ * @param color
+ * @param maxWidth
+ * @param width
+ * @param height
+ * @param marginIMG
+ * @param marginButton
+ * @param step
+ * @param autoFocus
+ * @returns {JSX.Element}
+ * @constructor
+ */
+
 export const CLFInputNumber = ({
                                  imgComponent = null,
                                  value = 1,
