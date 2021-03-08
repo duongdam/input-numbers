@@ -51,8 +51,31 @@ const App = () => {
         step={2}
       />
 
+      Step 2 disable
+      <CLFInputNumber
+        imgComponent={<IdentityImage />}
+        value={7}
+        step={2}
+        disabled={true}
+      />
+
+      Step 2 with no img disable
+      <CLFInputNumber
+        value={7}
+        step={2}
+        disabled={true}
+      />
+
+      Step 2 with no img readOnly
+      <CLFInputNumber
+        value={7}
+        step={2}
+        readOnly={true}
+      />
+
+
     </div>
   );
-}
+};
 
 export default App;
