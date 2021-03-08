@@ -1,6 +1,6 @@
 {
   "name": "input-numbers",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "ClassFunc library input number component use easy!",
   "author": "duongdam",
   "license": "MIT",
@@ -55,5 +55,13 @@
   "dependencies": {
     "antd": "^4.12.3",
     "styled-components": "^5.2.1"
-  }
+  },
+  "keywords": [
+    "antd",
+    "input number",
+    "styled component",
+    "antd input number styled component",
+    "classfunc library"
+  ],
+  "homepage": "https://github.com/duongdam"
 }
